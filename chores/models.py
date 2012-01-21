@@ -12,7 +12,7 @@ class Chore(models.Model):
 
 class CompletedChore(models.Model):
     chore = models.ForeignKey(Chore)
-    date_completed = Models.DateTimeField(default=datetime.now)
+    date_completed = models.DateTimeField(default=datetime.now)
     player = models.ForeignKey('Player')
 
     def __unicode__(self):
