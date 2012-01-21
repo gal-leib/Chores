@@ -1,17 +1,37 @@
+{% extends "base.html" %}
+
+{% block header %}
+<h1>Chores!</h1>
+<p>Let's see what's been happening...</p>
+{% endblock %}
+
+{% block content %}
+<div id="actions">
+    <p>You've done something? <a class="btn primary">Record it!</a></p>
+</div>
 {% if players %}
-    <table>
+<h2>Leaderboards!</h2>
+    <table class="table table-bordered">
+    <thead>
+        <th>Name</th>
+        <th>Points</th>
+    </thead>
+    <tbody>
     {% for player in players %}
         <tr>
             <td>{{ player.user.username }}</td>
             <td>{{ player.points }}</td>
         </tr>
     {% endfor %}
+    </tbody>
     </table>
 {% endif %}
 {% if recently_completed %}
+<h2>Recent chores completed</h2>
     <ul>
         {% for chore in recently_completed %}
             <li>{{ chore }}</li>
         {% endfor %}
     </ul>
 {% endif %}
+{% endblock %}
