@@ -19,8 +19,8 @@ class CompletedChore(models.Model):
         return u'{0} by {1} at {2}'.format(self.chore.title, self.player.user.username, self.date_completed)
 
 class Player(models.Model):
-    user = models.OneToOneField(User)
-    points = models.IntegerField()
+    user = models.OneToOneField(User, unique=True)
+    points = models.IntegerField(default=0)
 
     def __unicode__(self):
         return u'{0} : {1} points'.format(self.user.username, self.points)
