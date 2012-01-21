@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'chores.views.home', name='home'),
+    url(r'^$', 'chores.views.home', name='home'),
     # url(r'^chores/', include('chores.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

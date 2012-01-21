@@ -1,0 +1,17 @@
+{% if players %}
+    <table>
+    {% for player in players %}
+        <tr>
+            <td>{{ player.user.username }}</td>
+            <td>{{ player.points }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+{% if recently_completed %}
+    <ul>
+        {% for chore in recently_completed %}
+            <li>{{ chore }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
