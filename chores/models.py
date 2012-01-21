@@ -7,14 +7,23 @@ class Chore(models.Model):
     title = models.CharField(max_length=200)
     reward = models.IntegerField()
 
+    def __unicode__(self):
+        return u'{0} - {1} points'.format(self.title, self.reward)
+
 class CompletedChore(models.Model):
     chore = models.ForeignKey(Chore)
     date_completed = Models.DateTimeField(default=datetime.now)
     player = models.ForeignKey('Player')
 
+    def __unicode__(self):
+        return u'{0} by {1} at {2}'.format(self.chore.title, self.player.user.username, self.date_completed)
+
 class Player(models.Model):
     user = models.OneToOneField(User)
     points = models.IntegerField()
+
+    def __unicode__(self):
+        return u'{0} : {1} points'.format(self.user.username, self.points)
 
 def create_player(sender, instance, created, **kwargs):
     if created:
