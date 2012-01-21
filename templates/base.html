@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}chores.css" />
     <title>{% block title %}Chores!{% endblock %}</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
+        <header class="page-header">
         {% block header %}{% endblock %}
         </header>
         {% block content %}{% endblock %}

@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block header %}
-<h1>Chores!</h1>
-<p>Let's see what's been happening...</p>
+<h1>Chores! <small>Because <em>someone</em> needs to do it</small></h1>
 {% endblock %}
 
 {% block content %}
 <div id="actions">
-    <p>You've done something? <a class="btn primary">Record it!</a></p>
+    <p>You've done something?<p>
+    <a class="btn primary large">Record it!</a>
 </div>
 {% if players %}
-<h2>Leaderboards!</h2>
+<h2>Leaderboards</h2>
     <table class="table table-bordered">
     <thead>
         <th>Name</th>

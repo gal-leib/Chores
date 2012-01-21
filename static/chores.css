@@ -1,0 +1,8 @@
+.page-header {
+    margin: 18px 0;
+    border-bottom: 1px solid #eee;
+}
+.page-header h1 {
+    margin-bottom: 17px;
+    line-height: 1;
+}
