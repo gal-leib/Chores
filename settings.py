@@ -1,5 +1,8 @@
 # Django settings for chores project.
 
+import os
+
+CURRENT_DIR = os.path.dirname(__file__)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -56,7 +59,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(CURRENT_DIR, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -105,9 +108,11 @@ ROOT_URLCONF = 'urls'
 AUTH_PROFILE_MODULE = 'chores.Player'
 
 TEMPLATE_DIRS = (
+        os.path.join(CURRENT_DIR, 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+
 )
 
 INSTALLED_APPS = (
