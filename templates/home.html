@@ -26,10 +26,10 @@
         <th>Points</th>
     </thead>
     <tbody>
-    {% for player in players %}
+    {% for player,pts in players %}
         <tr>
             <td>{{ player.user.username }}</td>
-            <td>{{ player.points }}</td>
+            <td><div class="progress striped active danger"><div class="bar" style="width:{{ pts }}%;"></div></div></td>
         </tr>
     {% endfor %}
     </tbody>
