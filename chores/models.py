@@ -22,6 +22,9 @@ class Player(models.Model):
     user = models.OneToOneField(User, unique=True)
     points = models.IntegerField(default=0)
 
+    def add_points(self, points):
+        self.points += points
+
     def __unicode__(self):
         return u'{0} : {1} points'.format(self.user.username, self.points)
 

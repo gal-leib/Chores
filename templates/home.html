@@ -7,7 +7,7 @@
 {% block content %}
 <div id="actions">
     <p>You've done something?<p>
-    <a class="btn primary large">Record it!</a>
+    <a href="{% url complete_chore_view %}" class="btn primary large">Record it!</a>
 </div>
 {% if players %}
 <h2>Leaderboards</h2>

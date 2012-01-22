@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>Do a chore! <small>ZOMG POINTS!</small></h1>
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" action="/complete/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn primary" type="submit">Submit</button>
+    <a href="{% url home %}" class="btn">Cancel</a>
+</form>
+{% endblock %}
