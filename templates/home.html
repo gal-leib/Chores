@@ -6,8 +6,17 @@
 
 {% block content %}
 <div id="actions">
-    <p>You've done something?<p>
-    <a href="{% url complete_chore_view %}" class="btn primary large">Record it!</a>
+    <div id="prompt" class="collapse in">
+        <p>You've done something?<p>
+        <button class="btn primary large" data-toggle="collapse" data-target=".collapse">Record it!</button>
+    </div>
+    <div id="form" class="collapse">
+        <form class="form-horizontal" action="/complete/" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn primary" type="submit">Submit</button>
+            <a class="btn" data-toggle="collapse" data-target=".collapse">Cancel</a>
+        </form>
+    </div>
 </div>
 {% if players %}
 <h2>Leaderboards</h2>
