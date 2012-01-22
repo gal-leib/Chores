@@ -28,8 +28,9 @@
     <tbody>
     {% for player,pts in players %}
         <tr>
-            <td>{{ player.user.username }}</td>
+            <td>{{ player.user.first_name }}</td>
             <td><div class="progress striped active danger"><div class="bar" style="width:{{ pts }}%;"></div></div></td>
+
         </tr>
     {% endfor %}
     </tbody>
