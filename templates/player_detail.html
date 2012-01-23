@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h2>{{ player.user.first_name }}</h2>
+{% endblock %}
+{% block content %}
+<h3>Chores done:</h3>
+<ul>
+    {% for chore in player.chores.all %}
+    <li>{{ chore.chore.title }} at {{ chore.date_completed }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url home %}" class="btn">Go Back</a>
+{% endblock %}
