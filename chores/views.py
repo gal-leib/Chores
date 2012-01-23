@@ -12,7 +12,10 @@ def home(request):
     total_points = sum([p.points for p in allplayers])
     players=[]
     for p in allplayers:
-        percent_pts= p.points / total_points * 100
+        try:
+            percent_pts = p.points / total_points * 100
+        except ZeroDivisionError:
+            percent_pts = 0
         players.append((p,percent_pts))
     return render(request, 'home.html', {'players' : players,
         'recently_completed' : recently_completed, 'form' : CompleteChoreForm()})
